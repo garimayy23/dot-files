@@ -1,0 +1,157 @@
+set encoding=utf-8
+set fileencoding=utf-8
+set termencoding=utf-8
+let mapleader=" "
+filetype on
+filetype plugin on
+
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+"==============PLUGINS=================
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'morhetz/gruvbox'
+Plugin 'powerline/fonts'
+Plugin 'ryanoasis/vim-devicons'
+Plugin 'jiangmiao/auto-pairs'
+"Plugin 'bfrg/vim-cpp-modern'
+
+"Use for larger files
+"Plugin 'preservim/nerdtree'
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+"=====================================
+set backspace=indent,eol,start
+set nobackup
+set noswapfile
+set nowb
+
+"================COLOR================
+syntax on
+colorscheme gruvbox
+set bg=dark
+"let g:cpp_member_highlight = 1
+"let g:cpp_simple_highlight = 1
+"=====================================
+
+
+"ENABLE NERD TREESSS
+"autocmd VimEnter * NERDTree
+
+"=================MISC================
+
+"Scrolling will centre the cursor between 10 lines
+set scrolloff=10
+
+"Num lines
+set number
+set number relativenumber
+
+"High lights the search
+set hlsearch
+
+"Lets line continue forever
+set nowrap
+
+" Search cases ignore upper case
+set ignorecase
+
+" Tabs / Indentation
+set autoindent
+
+set smartindent
+
+set expandtab
+
+set tabstop=2
+
+set softtabstop=2
+
+set shiftwidth=2
+
+" Search
+set incsearch
+
+set ignorecase
+
+set showmode
+
+set showmatch
+
+set hlsearch
+
+set history=100
+
+" Deletes all trailing white space
+autocmd BufWritePre * %s/\s\+$//e
+
+" No noise
+"set novisualbell
+
+" Mouse !
+set mouse=a
+
+" (x, y) bottom right
+set ruler
+
+" shows cmds you are typing
+set showcmd
+
+" makes it so that your 'yanked' (pasted) text can be copied to the rest of the computer
+set clipboard^=unnamed,unnamedplus
+
+" Opens a terminal that will be to the right of the screen, terminal size should be smaller 1!!!
+command Vt :rightb :vert :terminal ++cols=80
+
+set cursorline
+
+" press zz to compile and run a c program in normal mode, returns to the previous state once compiled
+"autocmd filetype c nnoremap zz :w <CR>:!gcc % -o %:r && ./%:r<CR>
+"=====================================
+
+
+"===============FONT==============
+"Sets the default powerline font
+set guifont=DejaVuSansMonoPowerline:h11
+"=====================================
+
+
+"=====================================
+
+" air-line
+let g:airline_powerline_fonts = 1
+
+if !exists('g:airline_symbols')
+    let g:airline_symbols = {}
+endif
+
+" unicode symbols
+let g:airline_left_sep = '»'
+let g:airline_left_sep = '▶'
+let g:airline_right_sep = '«'
+let g:airline_right_sep = '◀'
+let g:airline_symbols.linenr = '␊'
+let g:airline_symbols.linenr = '␤'
+let g:airline_symbols.linenr = '¶'
+let g:airline_symbols.branch = '⎇'
+let g:airline_symbols.paste = 'ρ'
+let g:airline_symbols.paste = 'Þ'
+let g:airline_symbols.paste = '∥'
+let g:airline_symbols.whitespace = 'Ξ'
+
+" airline symbols import a powerline font if these show up as blank boxes
+let g:airline_left_sep = ''
+let g:airline_left_alt_sep = ''
+let g:airline_right_sep = ''
+let g:airline_right_alt_sep = ''
+let g:airline_symbols.branch = ''
+let g:airline_symbols.readonly = ''
+let g:airline_symbols.linenr = ''
+
+let g:airline_theme='gruvbox'
+
