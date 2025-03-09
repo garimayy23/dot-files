@@ -2,6 +2,8 @@
 vim.g.mapleader = " "
 vim.keymap.set({'n', 'v', 'i'}, '<C-c>', '"*y', {silent = true})
 vim.keymap.set({'n', 'v'}, '<leader>t', ':split | term<CR>3j$a', {silent = true})
+--vim.keymap.set({'n', 'v'}, '<leader>w', ':Telescope buffers<CR>', {silent = true })
+--vim.keymap.set({'n', 'v'}, '<leader>h', ':Telescope command_history<CR>', {silent = true })
 
 vim.opt.expandtab = true
 vim.opt.tabstop = 2
