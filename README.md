@@ -40,3 +40,6 @@ Clone this github repo to local dir and then change working directory
   cd dot-files
 ```
 Copy the required config files and run initial plugin setup as needed
+
+## Future Tasks
+- Custom bash scripts for installing pre-requisites and dependencies as well as setup config files.
