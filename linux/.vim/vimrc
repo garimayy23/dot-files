@@ -17,7 +17,9 @@ Plugin 'morhetz/gruvbox'
 Plugin 'powerline/fonts'
 Plugin 'ryanoasis/vim-devicons'
 Plugin 'jiangmiao/auto-pairs'
-"Plugin 'bfrg/vim-cpp-modern'
+Plugin 'junegunn/fzf'
+Plugin 'junegunn/fzf.vim'
+Plugin 'bfrg/vim-cpp-modern'
 
 "Use for larger files
 "Plugin 'preservim/nerdtree'
@@ -37,9 +39,20 @@ colorscheme gruvbox
 set bg=dark
 "let g:cpp_member_highlight = 1
 "let g:cpp_simple_highlight = 1
-"=====================================
-
-
+"Use 24-bit (true-color) mode in Vim/Neovim when outside tmux.
+if (empty($TMUX) && getenv('TERM_PROGRAM') != 'Apple_Terminal')
+  if (has("nvim"))
+    "For Neovim 0.1.3 and 0.1.4 < https://github.com/neovim/neovim/pull/2198 >
+    let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+  endif
+  "For Neovim > 0.1.5 and Vim > patch 7.4.1799 < https://github.com/vim/vim/commit/61be73bb0f965a895bfb064ea3e55476ac175162 >
+  "Based on Vim patch 7.4.1770 (`guicolors` option) < https://github.com/vim/vim/commit/8a633e3427b47286869aa4b96f2bfc1fe65b25cd >
+  if (has("termguicolors"))
+    set termguicolors
+  endif
+endif
+"================Mapping==============
+nnoremap <silent> <leader>f :Files<CR>
 "ENABLE NERD TREESSS
 "autocmd VimEnter * NERDTree
 
@@ -154,4 +167,3 @@ let g:airline_symbols.readonly = ''
 let g:airline_symbols.linenr = ''
 
 let g:airline_theme='gruvbox'
-
